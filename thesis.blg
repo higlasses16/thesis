@@ -1,0 +1,53 @@
+This is upBibTeX, Version 0.99d-j0.33-u1.11 (utf8.uptex) (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+The style file: junsrt.bst
+Database file #1: thesis.bib
+A bad cross reference---entry "conf/jsai/KuraiMZ06"
+refers to entry "conf/jsai/2006", which doesn't exist
+Warning--I didn't find a database entry for "conf/jsai/2006"
+Warning--empty booktitle in 2001:PMS:876881.879716
+Warning--empty publisher in suffixdd
+You've used 22 entries,
+            2270 wiz_defined-function locations,
+            710 strings with 9310 characters,
+and the built_in function-call counts, 8580 in all, are:
+= -- 761
+> -- 200
+< -- 33
++ -- 81
+- -- 59
+* -- 446
+:= -- 1002
+add.period$ -- 77
+call.type$ -- 22
+change.case$ -- 20
+chr.to.int$ -- 0
+cite$ -- 24
+duplicate$ -- 556
+empty$ -- 829
+format.name$ -- 118
+if$ -- 2171
+int.to.chr$ -- 0
+int.to.str$ -- 22
+missing$ -- 25
+newline$ -- 113
+num.names$ -- 24
+pop$ -- 135
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 455
+stack$ -- 0
+substring$ -- 551
+swap$ -- 197
+text.length$ -- 33
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 74
+width$ -- 24
+write$ -- 267
+is.kanji.str$ -- 258
+(There was 1 error message)

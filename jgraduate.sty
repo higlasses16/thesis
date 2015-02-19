@@ -1,0 +1,408 @@
+%% 卒論用スタイルファイル jgraduate2000.sty for pLaTeX2e
+%%
+%% 使い方
+%%
+%% \documentclass[12pt]{jreport} % 12ptでjreportを使って下さい。
+%% \usepackage{jgraduate98}      % jgraduate98.styを読み込む
+%% \usepackage{makeidx}          % 索引作成用
+%%
+%% % 前設定
+%% \title{}                      % 論文題目 (ほげほげの研究, etc.)
+%% \author{}                     % 著者氏名 (名無 権兵衛, etc.)
+%% \university{}                 % 大学名 (九州大学, etc.)
+%% \department{}                 % 学部名 (工学部, etc.)
+%% \major{}                      % 学科名 (情報工学科, etc.)
+%%
+%% \begin{document}              % ここから本文は始まる
+%%
+%% \maketitle                    % 表紙
+%%
+%% \begin{abstract}              %
+%%  概要                         % 概要
+%% \end{abstract}                %
+%%
+%% \tableofcontents              % 目次 (↓ *のついている項目)
+%% \listoffigures                % 図目次
+%% \listoftables                 % 表目次
+%% \newpage                      % 改ページ
+%% \pagenumbering{arabic}        % ページ番号をアラビア数字に
+%%
+%% \chapter{}                    % 章 (*)
+%% \section{}                    % 節 (*)
+%% \subsection{}                 % 項 (*)
+%% \subsubsection{}              % 目
+%% \paragraph{}                  % 段落 
+%% \subparagraph{}               % 小段落
+%%
+%% \acknowledgment               % 謝辞 (*)
+%%
+%% % ここに文献リストを入れる。文献リストの書き方は人それぞれ。
+%% % (ベタ書き, 半分計算機にやらせる, 全部計算機任せ, etc.)
+%%
+%% \appendix                     % ここから付録(もしあれば)
+%% \chapter{}                    % 付録の章 (*)
+%%
+%% \printindex                   % 索引
+%%
+%% \end{document}                % 本文終わり
+
+% 用紙サイズ - A4
+\setlength{\paperheight}{297mm} % \pageheight for LaTeX 2.09
+\setlength{\paperwidth}{210mm}  % \pagewidth  for LaTeX 2.09
+
+% 一段組のパラメータ - 縦方向
+\setlength{\topmargin}{-2.4mm} % 23mm - 1in
+\setlength{\headheight}{5mm}
+\setlength{\headsep}{5mm}
+\setlength{\topskip}{8mm}
+\setlength{\footskip}{10mm}
+%\setlength{\footheight}{10mm} % for LaTeX 2.09
+\setlength{\marginparpush}{5mm}
+\setlength{\textheight}{226mm}
+% textheight = pageheight(297) - o_topmargin(23) - headheight*(5) -
+%              headsep*(5) - footskip*(10) - bottommargin(20)
+
+% 一段組のパラメータ - 横方向
+\setlength{\oddsidemargin}{-3.4mm}  % 22mm - 1in
+\setlength{\evensidemargin}{-3.4mm} % 22mm - 1in
+\setlength{\marginparsep}{0mm}
+\setlength{\marginparwidth}{0mm}
+\setlength{\textwidth}{166mm}
+% textwidth = pagewidth(210) - leftmargin(22) - maginparsep(0) - 
+%             marginparwidth(0) - rightmargin(22)
+
+% リスト環境のパラメータ - 縦方向
+\setlength{\partopsep}{0mm}
+\setlength{\topsep}{0mm}
+\setlength{\parskip}{0mm}
+\setlength{\parsep}{0mm}
+\setlength{\itemsep}{0mm}
+
+% リスト環境のパラメータ - 横方向
+\setlength{\leftmargin}{50mm}
+\setlength{\labelwidth}{10zw}
+\setlength{\labelsep}{1zw}
+\setlength{\itemindent}{2zw}
+\setlength{\listparindent}{1zw} % どうやら、使われていないらしい
+\setlength{\rightmargin}{0mm}
+
+
+\def\thesistoc{
+  \@openrightfalse
+  \pagestyle{jgraduatetoc}
+}
+
+\def\thesisbody{
+  \pagenumbering{arabic}
+  \if@twoside
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+  \@openrighttrue
+  \pagestyle{jgraduate}
+}
+
+\def\ps@jgraduatetoc{%
+  \def\@oddhead{\underline{\hbox to \textwidth{~~\bf\rightmark%
+        \hfil\thepage~~}}}%
+  %\let\@oddhead\empty%
+  \let\@evenhead\@oddhead%
+  \let\@oddfoot\empty%
+  \let\@evenfoot\empty%
+}
+
+% ページレイアウト
+\def\ps@jgraduate{%
+  \let\@mkboth\markboth%
+    \def\@oddhead{\underline{\hbox to \textwidth{\hfil%
+        {\small\bf\rightmark\qquad\textbf{\thepage}}}\hss}}
+    \def\@evenhead{\underline{\hbox to \textwidth{%
+        {\small\bf\textbf{\thepage}\qquad\leftmark}\hfil}}}
+  %\def\@evenhead{\underline{\hbox to \textwidth{~~\thepage\hfil%
+  %      \bf\rightmark~~}}}%
+  %\def\@oddhead{\underline{\hbox to \textwidth{~~\bf\rightmark%
+  %      \hfil\thepage~~}}}%
+  \def\@oddfoot{$\overline{\hbox to \textwidth{\hfil%
+        \@university\ \@department\ \@major~~}}$}%
+  \def\@evenfoot{$\overline{\hbox to \textwidth{%
+        \@university\ \@department\ \@major~~\hfil}}$}%
+  %\def\chaptermark##1{\markright{%
+  %  \@chapapp\space\thechapter\space\@chappos~~~##1}}%
+  \let\@mkboth\markboth
+  \def\chaptermark##1{\markboth{%
+    \ifnum \c@secnumdepth >\m@ne
+    \@chapapp\thechapter\@chappos\hskip1zw
+    \fi
+    ##1}{}}%
+  \def\sectionmark##1{\markright{%
+    \ifnum \c@secnumdepth >\z@ \thesection \hskip1zw\fi
+    ##1}}
+}
+
+%%%%%
+%\makeatletter
+\newif\ifCountBlankPage
+\newif\if@first@output
+\global\@first@outputtrue
+\newbox\@outputpage@tempbox
+\let\@LaTeX@outputpage\@outputpage
+\def\@outputpage@with@blankpage{%
+  \ifCountBlankPage
+      \if@first@output
+        \ifodd\c@page
+            \setbox\@outputpage@tempbox\box\@outputbox
+            \@makeblankpage\@styleforblankpage
+            \setbox\@outputbox\box\@outputpage@tempbox
+        \fi
+        \global\@first@outputfalse
+      \fi
+      \@LaTeX@outputpage
+      \@makeblankpage\@styleforblankpage
+  \else
+      \@save@pagestyle
+      \if@specialpage
+        \csname ps@\@specialstyle\endcsname
+        \global\@specialpagefalse
+      \fi
+      \if@twoside
+        \let\@oddhead\@evenhead
+        \let\@oddfoot\@evenfoot
+      \fi
+      \@LaTeX@outputpage
+      \@restore@pagestyle
+      \@makeblankpage{@absoluteempty}%
+      \@restore@pagestyle
+      \addtocounter{page}{-1}%
+  \fi}
+\def\makeblankpage{\clearpage \let\@outputpage\@outputpage@with@blankpage}
+\def\noblankpage{\clearpage \let\@outputpage\@LaTeX@outputpage}
+\def\@makeblankpage#1{%
+  \edef\@tempa{#1}%
+  \ifx\@tempa\@empty\else
+      \global\@specialpagetrue
+      \edef\@specialstyle{#1}%
+  \fi
+  \ifCountBlankPage\else
+      \if@twoside
+        \let\@evenhead\@oddhead
+        \let\@evenfoot\@oddfoot
+      \fi
+  \fi
+  \setbox\@outputbox\vbox to\@colht{}%
+  \@LaTeX@outputpage}
+\def\styleforblankpage#1{%
+  \@ifundefined{ps@#1}%
+      {\global\let\@styleforblankpage\@empty}%
+      {\xdef\@styleforblankpage{#1}}}
+\global\let\@styleforblankpage\@empty
+\def\@save@pagestyle{%
+  \let\@@oddhead\@oddhead \let\@@evenhead\@evenhead
+  \let\@@oddfoot\@oddfoot \let\@@evenfoot\@evenfoot}
+\def\@restore@pagestyle{%
+  \let\@oddhead\@@oddhead \let\@evenhead\@@evenhead
+  \let\@oddfoot\@@oddfoot \let\@evenfoot\@@evenfoot}
+\def\ps@@absoluteempty{%
+  \let\@oddhead\@empty \let\@evenhead\@empty
+  \let\@oddfoot\@empty \let\@evenfoot\@empty}
+\AtBeginDocument{\ifCountBlankPage\else \oddsidemargin\evensidemargin \fi}
+%\makeatother
+
+\CountBlankPagefalse
+\styleforblankpage{empty}
+
+%%%%%%
+
+\newcommand*{\eauthor}[1]{\gdef\@eauthor{#1}}% #1: 著者名英語つづり
+\newcommand*{\studentid}[1]{\gdef\@studentid{#1}}% #1: 学生証番号
+\newcommand*{\thesis}[1]{\gdef\@thesis{#1}}% #1: 学生証番号
+\newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}% #1: 指導教員名 + 役職 [2005/12/09]
+\gdef\@supervisor@prefix{指導教員}
+\newcommand\abstractname{概 要}
+
+% 表紙
+\def\maketitle{
+ \begin{titlepage}%
+  \null%
+  \vfil%
+  \begin{center}%
+    {\large\bf\@thesis\par}
+   {\LARGE\bf\@title\par}\vskip 22em%
+   {\large\bf\@major\par}\vskip 3em minus 2em %
+   \Large\bf
+       {\begin{tabular}[t]{rl}%
+           \ifx\@studentid\@undefined\else\@studentid\fi &
+            {\LARGE\@author} \\[1\p@]
+          \@supervisor@prefix & $ \shortstack{\@supervisor} $
+         \end{tabular}\par}\vskip 3em minus 1em %
+   %{\Large\bf\@author\par}\vskip 3em minus 1em %
+   {\large\bf\@date}\vskip 3em minus 1em%
+  \end{center}%
+  \vfil%
+  \newpage\cleardoublepage
+  %\thispagestyle{empty}
+  \null\vfill
+  \begin{flushleft}
+    Copyright {\copyright} {\number\year},~%
+    \ifx\@eauthor\@undefined \@author\else\@eauthor\fi.
+  \end{flushleft}\par
+  \vskip60\p@\null
+ \end{titlepage}%
+ \newpage\cleardoublepage
+ \setcounter{page}{1}
+}
+
+% 概要
+\newenvironment{abstract}{%
+  %\pagenumbering{roman}
+  \if@twocolumn
+    \section*{\abstractname}%
+    \begin{quotation}%
+  \else
+    \@mkboth{\abstractname}{\abstractname}%
+    \vspace*{50\p@}%
+    {%
+     \parindent \z@ \raggedright
+     \reset@font\huge\bfseries
+     \interlinepenalty\@M
+     \center{\abstractname}\par\nobreak
+     \vskip 40\p@
+    }%
+    \begin{quotation}%
+  \fi}{\end{quotation}\clearpage}
+
+
+% 目次
+\def\tableofcontents{%
+  \pagenumbering{roman}
+ \if@twocolumn\@restonecoltrue\onecolumn
+ \else\@restonecolfalse\fi
+ \chapter*{\contentsname}%
+ \@mkboth{\contentsname}{\contentsname}%
+ \@starttoc{toc}%
+ \if@restonecol\twocolumn\fi
+ \cleardoublepage
+% \pagenumbering{arabic}
+}
+
+
+% 章関係
+\def\chapter{%
+  \if@openright\cleardoublepage\else\clearpage\fi
+  %\cleardoublepage
+ \global\@topnum\z@
+ \@afterindenttrue
+ \secdef\@chapter\@schapter}
+
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {%
+   \parindent \z@ \raggedright
+   \reset@font\huge\bfseries
+   \ifnum \c@secnumdepth >\m@ne
+    \@chapapp\thechapter\@chappos
+    \par\nobreak
+    \vskip 20\p@
+   \fi
+   \interlinepenalty\@M
+   #1\par\nobreak
+   \vskip 40\p@
+  }%
+}
+
+\def\@makeschapterhead#1{%
+ \vspace*{50\p@}%
+ {%
+  \parindent \z@ \raggedright
+  \reset@font\huge\bfseries
+  \interlinepenalty\@M
+  #1\par\nobreak
+  \vskip 40\p@
+ }%
+}
+
+% 索引
+\renewenvironment{theindex}
+  {\newpage\if@twocolumn\@restonecolfalse\else\@restonecoltrue\fi%
+   \columnseprule\z@ \columnsep 35\p@%
+   \twocolumn[\chapter*{\indexname}]%
+   \addcontentsline{toc}{chapter}{\indexname}
+   \@mkboth{\indexname}{\indexname}%
+   \parindent\z@%
+   \parskip\z@ \@plus .3\p@\relax%
+   \let\item\@idxitem%
+  }
+  {\if@restonecol\onecolumn\else\clearpage\fi}
+
+
+% 謝辞
+\def\acknowledgementname{\def\@cknowledgementname}
+\let\acknowledgmentname\acknowledgementname
+\acknowledgementname{謝辞}
+
+\def\acknowledgement{%
+ \typeout{\@cknowledgementname}%
+ \chapter*{\@cknowledgementname}%
+ \@mkboth{\@cknowledgementname}{\@cknowledgementname}%
+ \addcontentsline{toc}{chapter}{\@cknowledgementname}%
+}
+\let\acknowledgment\acknowledgement
+
+
+% 参考文献
+% 参考文献／文献参照
+\def\name@bib{参考文献}
+\def\label@bib#1{%
+  [#1]%
+%  \rlap{%(
+%    )}%
+  }
+\renewenvironment{thebibliography}[1]%
+  {\chapter*{\name@bib}%
+    \@mkboth{\name@bib}{\name@bib}%
+    \addcontentsline{toc}{chapter}{\name@bib}%
+    \list{%
+      \label@bib{\arabic{enumi}}%
+    }{%
+      \settowidth\labelwidth{\@biblabel{#1}}%
+      \leftmargin\labelwidth
+      \advance\leftmargin\labelsep
+      \def\newblock{\hskip .11em plus .33em minus .07em}
+      \usecounter{enumi}%
+      \let\p@enumi\@empty
+      \renewcommand\theenumi{\@arabic\c@enumi}}%
+    \sloppy
+    \clubpenalty4000
+    \@clubpenalty\clubpenalty
+    \widowpenalty4000%
+    \sfcode`\.\@m}%
+  {\def\@noitemerr
+     {\@latex@warning{Empty `thebibliography' environment}}%
+     \endlist}
+
+\newif\ifCite
+\def\cite{\Citefalse\@ifnextchar[%]
+  {\@tempswatrue\@citex}{\@tempswafalse\@citex[]}}
+\def\Cite{\Citetrue\@ifnextchar[%]
+  {\@tempswatrue\@citex}{\@tempswafalse\@citex[]}}
+\def\@cite#1#2{\ifCite\else$^{\hbox{\scriptsize\fi{[#1%
+  \if@tempswa , #2\fi]}\ifCite\else}}$\fi}
+
+% その他
+\def\yen{Y\llap=}
+\def\university{\def\@university}
+\def\department{\def\@department}
+\def\major{\def\@major}
+
+\newcommand{\chapref}[1]{第\ref{#1}章}
+\newcommand{\secref}[1]{\S\ref{#1}}
+\newcommand{\figref}[1]{図~\ref{#1}}
+\newcommand{\tabref}[1]{表~\ref{#1}}
+
+
+% 初期設定
+\university{\tt\yen university\{大学名\}}
+\department{\tt\yen department\{学部/研究科名\}}
+\major{\tt\yen major\{学科/課程 専攻名\}}
+\pagestyle{empty}
+\def\baselinestretch{1.5}

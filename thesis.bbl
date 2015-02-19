@@ -1,0 +1,146 @@
+\begin{thebibliography}{10}
+
+\bibitem{Agrawal:1993:MAR:170036.170072}
+Rakesh Agrawal, Tomasz Imieli\'{n}ski, and Arun Swami.
+\newblock Mining association rules between sets of items in large databases.
+\newblock {\em SIGMOD Rec.}, Vol.~22, No.~2, pp. 207--216, June 1993.
+
+\bibitem{Agrawal:1994:FAM:645920.672836}
+Rakesh Agrawal and Ramakrishnan Srikant.
+\newblock Fast algorithms for mining association rules in large databases.
+\newblock In {\em Proceedings of the 20th International Conference on Very
+  Large Data Bases}, VLDB '94, pp. 487--499, San Francisco, CA, USA, 1994.
+  Morgan Kaufmann Publishers Inc.
+
+\bibitem{Srikant:1996:MSP:645337.650382}
+Ramakrishnan Srikant and Rakesh Agrawal.
+\newblock Mining sequential patterns: Generalizations and performance
+  improvements.
+\newblock In {\em Proceedings of the 5th International Conference on Extending
+  Database Technology: Advances in Database Technology}, EDBT '96, pp. 3--17,
+  London, UK, UK, 1996. Springer-Verlag.
+
+\bibitem{Zaki:2001:SEA:599609.599626}
+Mohammed~J. Zaki.
+\newblock Spade: An efficient algorithm for mining frequent sequences.
+\newblock {\em Mach. Learn.}, Vol.~42, No. 1-2, pp. 31--60, January 2001.
+
+\bibitem{citeulike:3407300}
+Jay Ayres, Jason Flannick, Johannes Gehrke, and Tomi Yiu.
+\newblock {Sequential PAttern mining using a bitmap representation}.
+\newblock In {\em Proceedings of the ACM International Conference on Knowledge
+  Discovery and Data Mining (KDD '02 )}, KDD '02, pp. 429--435, New York, NY,
+  USA, 2002. ACM.
+
+\bibitem{2001:PMS:876881.879716}
+Jian Pei, Jiawei Han, Behzad Mortazavi-asl, Helen Pinto, Qiming Chen, Umeshwar
+  Dayal, and Mei chun Hsu.
+\newblock Prefixspan: Mining sequential patterns efficiently by
+  prefix-projected pattern growth.
+\newblock pp. 215--224, 2001.
+
+\bibitem{Kitakami:2002:MPM:646966.759862}
+Hajime Kitakami, Tomoki Kanbara, Yasuma Mori, Susumu Kuroki, and Yukiko
+  Yamazaki.
+\newblock Modified prefixspan method for motif discovery in sequence databases.
+\newblock In {\em Proceedings of the 7th Pacific Rim International Conference
+  on Artificial Intelligence: Trends in Artificial Intelligence}, PRICAI '02,
+  pp. 482--491, London, UK, UK, 2002. Springer-Verlag.
+
+\bibitem{Soderland:1995:CIC:1643031.1643069}
+Stephen Soderland, David Fisher, Jonathan Aseltine, and Wendy Lehnert.
+\newblock Crystal inducing a conceptual dictionary.
+\newblock In {\em Proceedings of the 14th International Joint Conference on
+  Artificial Intelligence - Volume 2}, IJCAI'95, pp. 1314--1319, San Francisco,
+  CA, USA, 1995. Morgan Kaufmann Publishers Inc.
+
+\bibitem{Soderland:1999:LIE:309497.309510}
+Stephen Soderland.
+\newblock Learning information extraction rules for semi-structured and free
+  text.
+\newblock {\em Mach. Learn.}, Vol.~34, No. 1-3, pp. 233--272, February 1999.
+
+\bibitem{Loekito:2010:BDD:1851388.1851396}
+Elsa Loekito, James Bailey, and Jian Pei.
+\newblock A binary decision diagram based approach for mining frequent
+  subsequences.
+\newblock {\em Knowl. Inf. Syst.}, Vol.~24, No.~2, pp. 235--268, August 2010.
+
+\bibitem{Klein:2003:AUP:1075096.1075150}
+Dan Klein and Christopher~D. Manning.
+\newblock Accurate unlexicalized parsing.
+\newblock In {\em Proceedings of the 41st Annual Meeting on Association for
+  Computational Linguistics - Volume 1}, ACL '03, pp. 423--430, Stroudsburg,
+  PA, USA, 2003. Association for Computational Linguistics.
+
+\bibitem{Goldwater:2006:CDU:1220175.1220260}
+Sharon Goldwater, Thomas~L. Griffiths, and Mark Johnson.
+\newblock Contextual dependencies in unsupervised word segmentation.
+\newblock In {\em Proceedings of the 21st International Conference on
+  Computational Linguistics and the 44th Annual Meeting of the Association for
+  Computational Linguistics}, ACL-44, pp. 673--680, Stroudsburg, PA, USA, 2006.
+  Association for Computational Linguistics.
+
+\bibitem{MDLchang}
+松原勇介, 秋葉友良, 辻井潤一.
+\newblock
+  最小記述長原理に基づいた日本語話し言葉の単語分割.
+\newblock  言語処理学会第13回年次大会発表論文集, 2007.
+
+\bibitem{pattern-grammar}
+Susan Hunston and Gill Francis.
+\newblock {\em Pattern Grammar: A Corpus-driven Approach to the Lexical Grammar
+  of English}.
+\newblock Studies in Corpus Linguistics4. JOHN BENJAMINS PUBLISHING COMPANY,
+  2000.
+
+\bibitem{journals/ir/Tanaka-IshiiI07}
+Kumiko Tanaka-Ishii and Yuichiro Ishii.
+\newblock Multilingual phrase-based concordance generation in real-time.
+\newblock {\em Inf. Retr.}, Vol.~10, No.~3, pp. 275--295, 2007.
+
+\bibitem{Somenzi99binarydecision}
+Fabio Somenzi.
+\newblock Binary decision diagrams.
+\newblock In {\em Calculational System Design, volume 173 of NATO Science
+  Series F: Computer and Systems Sciences}, pp. 303--366. IOS Press, 1999.
+
+\bibitem{bryant86}
+Randal Bryant.
+\newblock Graph-based algorithms for boolean function manipulation.
+\newblock {\em IEEE Transactions on Computers}, Vol. C-35, No.~8, pp. 677--691,
+  August 1986.
+
+\bibitem{Knuth:2009:ACP:1593023}
+Donald~E. Knuth.
+\newblock {\em The Art of Computer Programming, Volume 4, Fascicle 1: Bitwise
+  Tricks \& Techniques; Binary Decision Diagrams}.
+\newblock Addison-Wesley Professional, 12th edition, 2009.
+
+\bibitem{Minato:1993:ZBS:157485.164890}
+Shinichi Minato.
+\newblock Zero-suppressed bdds for set manipulation in combinatorial problems.
+\newblock In {\em Proceedings of the 30th International Design Automation
+  Conference}, DAC '93, pp. 272--277, New York, NY, USA, 1993. ACM.
+
+\bibitem{conf/jsai/KuraiMZ06}
+Ryutaro Kurai, Shinichi Minato, and Thomas Zeugmann.
+\newblock N-gram analysis based on zero-suppressed bdds.
+\newblock In Takashi Washio, Ken Satoh, Hideaki Takeda, and Akihiro Inokuchi,
+  editors, {\em JSAI}, Vol. 4384 of {\em Lecture Notes in Computer Science},
+  pp. 289--300. Springer, 2006.
+
+\bibitem{minato:recently-bdd}
+湊真一.
+\newblock
+  {BDD/ZDD}を基盤とする離散構造と演算処理系の最近の展開.
+\newblock 電子情報通信学会 基礎・境界ソサイエティ
+  Fundamentals Review, Vol.~4, No.~3, pp. 224--230, 2011.
+
+\bibitem{suffixdd}
+Shuhei Denzumi, Hiroki Arimura, and Shinichi Minato.
+\newblock {\em Suffix-DDs: Substring Indices Based on Sequence BDDs for
+  Constrained Sequence Mining}.
+\newblock 2010.
+
+\end{thebibliography}
